@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cab bookng </title>
+</head>
+<body>
+    
+</body>
+</html>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f4f7;
+}
+header {
+    background: #000;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 40px;
+    background: #fff;
+}
+
+.hero-text {
+    max-width: 45%;
+}
+
+.hero-text h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #555;
+}
+
+.hero img {
+    width: 50%;
+    border-radius: 20px;
+}
+.booking {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+.car-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.car-card {
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.car-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.car-card h4 {
+    margin: 10px 0 5px;
+}
+
+.car-card.selected {
+    border-color: #000;
+    background: #f0f0f0;
+}
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+    color: #fff;
+    margin-top: 40px;
+}
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .hero img {
+        width: 100%;
+    }
+
+}
+.map{
+    border: solid;
+    border-radius: 50px;
+    border-color:black;
+    padding:1px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>TunTun cabwala</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Book Cab</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+<section class="hero">
+    <div class="hero-text">
+        <h2>Book a Cab Anytime</h2>
+        <p>Safe, fast and affordable cab service at your doorstep.</p>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1542362567-b07e54358753"
+         alt="Cab Car">
+</section>
+<section class="booking">
+
+   
+    <div class="form-group">
+        <label>Pickup Location</label>
+        <input type="text" required>
+    </div>
+
+    <div class="form-group">
+        <label>Drop Location</label>
+        <input type="text" required>
+    </div>
+
+    <label>Select Car Type</label>
+    <div class="car-options">
+
+        <div class="car-card" onclick="selectCar(this, 'Mini')">
+            <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588">
+            <h4>Mini</h4>
+            <p>₹10/km</p>
+        </div>
+
+        <div class="car-card" onclick="selectCar(this, 'Sedan')">
+            <img src="https://images.unsplash.com/photo-1542362567-b07e54358753">
+            <h4>Sedan</h4>
+            <p>₹15/km</p>
+        </div>
+
+        <div class="car-card" onclick="selectCar(this, 'SUV')">
+            <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a">
+            <h4>SUV</h4>
+            <p>₹20/km</p>
+        </div>
+
+        <div class="car-card" onclick="selectCar(this, 'Luxury')">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+            <h4>Luxury</h4>
+            <p>₹30/km</p>
+        </div>
+
+    </div>
+   
+
+    </div>
+
+    <input type="hidden" id="selectedCar">
+
+    <button>Book Cab</button>
+</section>
+
+<section class="booking">
+    <lable >Enter your name</lable>
+    <input type="text"></text>
+    <label>Drop a review here</label>
+    <input type="text"></input>
+    <section class="booking">
+    <p>Harshit Singh ⭐⭐⭐⭐</p>
+    <P>Really like the service provided by Hashircab. You should definitely go for the service the ride was comfertable</P>
+    </section>
+    <section class="booking">
+        <p>Virat Kohli ⭐⭐⭐⭐⭐</p>
+        <p>The price was good the service was good what else do you want from a cab booking wedsite.</p>        
+    </section>
+    <section class="booking">
+        <p>Rohit Sharma ⭐⭐⭐⭐</p>
+        <p>very good harhircab service. Was on time  ,very clean .Really like it</p>
+    </section>
+    <section class="booking">
+        <P>Doramon ⭐⭐⭐⭐⭐</P>
+        <p>Like the service provide by hashir cab</p>
+        
+    </section>
+</section>
+ <footer>
+    Take the way wind take you. dont care about time hashircab got you.
+    <br>
+    © 2025 hashircab
+</footer>
+
+</body>
+</html>
